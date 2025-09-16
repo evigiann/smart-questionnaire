@@ -1,0 +1,220 @@
+{
+"questionnaireID": "3",
+"questionnaireTitle": "Dummy Questionnaire for testing",
+"keywords": [
+	"dummy",
+	"testing"
+	],
+"questions": [
+	{
+	"qID": "Dummy1",
+	"qtext": "How old are you?",
+	"required": "TRUE",
+	"type": "profile",
+	"options": [
+		{
+		"optID": "D1opt1",
+		"opttxt": "<30",
+		"nextqID": "Dummy2"
+		},
+		{
+		"optID": "D1opt2",
+		"opttxt": "30-50",
+		"nextqID": "Dummy2"
+		},
+		{
+		"optID": "D1opt3",
+		"opttxt": "50-70",
+		"nextqID": "Dummy2"
+		},
+		{
+		"optID": "D1opt4",
+		"opttxt": ">70",
+		"nextqID": "Dummy2"
+		}
+		]
+	},
+	{
+	"qID": "Dummy2",
+	"qtext": "What is your favourite colour?",
+	"required": "TRUE",
+	"type": "question",
+	"options": [
+		{
+		"optID": "D2opt1",
+		"opttxt": "yellow",
+		"nextqID": "Dummy3"
+		},
+		{
+		"optID": "D2opt2",
+		"opttxt": "green",
+		"nextqID": "Dummy3"
+		},
+		{
+		"optID": "D2opt3",
+		"opttxt": "blue",
+		"nextqID": "Dummy3"
+		}
+		]
+		},
+	{
+	"qID": "Dummy3",
+	"qtext": "Do you like soccer?",
+	"required": "TRUE",
+	"type": "question",
+	"options": [
+		{
+		"optID": "D3opt1",
+		"opttxt": "yes",
+		"nextqID": "Dummy4"
+		},
+		{
+		"optID": "D3opt2",
+		"opttxt": "no",
+		"nextqID": "Dummy5"
+		}
+		]
+		},
+		{
+	"qID": "Dummy4",
+	"qtext": "Which football club do you support?",
+	"required": "FALSE",
+	"type": "question",
+	"options": [
+		{
+		"optID": "D4opt1",
+		"opttxt": "Liverpool",
+		"nextqID": "Dummy5"
+		},
+		{
+		"optID": "D4opt2",
+		"opttxt": "Manchester City",
+		"nextqID": "Dummy5"
+		},
+		{
+		"optID": "D4opt3",
+		"opttxt": "Manchester United",
+		"nextqID": "Dummy5"
+		}
+		]
+	},
+	{
+	"qID": "Dummy5",
+	"qtext": "Have you ever lived in an island?",
+	"required": "TRUE",
+	"type": "question",
+	"options": [
+		{
+		"optID": "D5opt1",
+		"opttxt": "no",
+		"nextqID": "Dummy6"
+		},
+		{
+		"optID": "D5opt2",
+		"opttxt": "yes",
+		"nextqID": "Dummy7"
+		}
+		]
+	},
+	{
+	"qID": "Dummy7",
+	"qtext": "How would you describe your relationship with water skiing?",
+	"required": "FALSE",
+	"type": "question",
+	"options": [
+		{
+		"optID": "D7opt1",
+		"opttxt": "none",
+		"nextqID": "Dummy9"
+		},
+		{
+		"optID": "D7opt2",
+		"opttxt": "I know a little",
+		"nextqID": "Dummy9"
+		},
+		{
+		"optID": "D7opt3",
+		"opttxt": "I am experienced",
+		"nextqID": "Dummy9"
+		}
+		]
+	},
+	{
+	"qID": "Dummy6",
+	"qtext": "Are you a winter swimmer?",
+	"required": "TRUE",
+	"type": "question",
+	"options": [
+		{
+		"optID": "D6opt1",
+		"opttxt": "no",
+		"nextqID": "Dummy8"
+		},
+		{
+		"optID": "D6opt2",
+		"opttxt": "yes",
+		"nextqID": "Dummy8"
+		}
+		]
+	},
+	{
+	"qID": "Dummy8",
+	"qtext": "Do you go winter skiing?",
+	"required": "TRUE",
+	"type": "question",
+	"options": [
+		{
+		"optID": "D8opt1",
+		"opttxt": "No/I dont ski",
+		"nextqID": "Dummy9"
+		},
+		{
+		"optID": "D8opt2",
+		"opttxt": "Rarely",
+		"nextqID": "Dummy9"
+		},
+		{
+		"optID": "D8opt3",
+		"opttxt": "I ski every weekend",
+		"nextqID": "Dummy9"
+		}
+		]
+	},
+	{
+	"qID": "Dummy9",
+	"qtext": "Do you agree with the changing of standard clock time?",
+	"required": "TRUE",
+	"type": "question",
+	"options": [
+		{
+		"optID": "D9opt1",
+		"opttxt": "no",
+		"nextqID": "Dummy9"
+		},
+		{
+		"optID": "D9opt2",
+		"opttxt": "yes",
+		"nextqID": "Dummy10"
+		}
+		]
+	},
+	{
+	"qID": "Dummy10",
+	"qtext": "Do you prefer summer or winter time?",
+	"required": "FALSE",
+	"type": "question",
+	"options": [
+		{
+		"optID": "D10opt1",
+		"opttxt": "Winter",
+		"nextqID": "Dummy10"
+		},
+		{
+		"optID": "D10opt2",
+		"opttxt": "Summer",
+		"nextqID": "Dummy10"
+		}
+		]
+	}
+	]
+}

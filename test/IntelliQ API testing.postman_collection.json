@@ -1,0 +1,1026 @@
+{
+	"info": {
+		"_postman_id": "d9c672af-0e8e-4be6-a54e-886222046c98",
+		"name": "IntelliQ API testing",
+		"description": "API collection for testing the IntelliQ API calls",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25275514"
+	},
+	"item": [
+		{
+			"name": "1. Check database connection",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/admin/healthcheck",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"admin",
+						"healthcheck"
+					]
+				},
+				"description": "Check database connection"
+			},
+			"response": [
+				{
+					"name": "Database is okay",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9103/intelliq_api/admin/healthcheck",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9103",
+							"path": [
+								"intelliq_api",
+								"admin",
+								"healthcheck"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "73"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.2 Python/3.9.7"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 17 Feb 2023 10:00:31 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"OK\",\n    \"dbconnection\": \"the database is now connected\"\n}"
+				}
+			]
+		},
+		{
+			"name": "2. Update questionnaire",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "",
+							"contentType": "multipart/form-data",
+							"type": "file",
+							"src": "/Users/olga/Downloads/testing_questionnaire_english.json"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/admin/questionnaire_upd",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"admin",
+						"questionnaire_upd"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Successful upload of queqstionnaire",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "",
+									"contentType": "multipart/form-data",
+									"type": "file",
+									"src": "/Users/olga/Downloads/testing_questionnaire_english.json"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:9103/intelliq_api/admin/questionnaire_upd",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9103",
+							"path": [
+								"intelliq_api",
+								"admin",
+								"questionnaire_upd"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "21"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.2 Python/3.9.7"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 18 Feb 2023 13:25:28 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"OK\"\n}"
+				}
+			]
+		},
+		{
+			"name": "3. Reset all data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/admin/resetall",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"admin",
+						"resetall"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Successful reset",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9103/intelliq_api/admin/resetall",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9103",
+							"path": [
+								"intelliq_api",
+								"admin",
+								"resetall"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "21"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.2 Python/3.9.7"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 16 Feb 2023 19:19:24 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"OK\"\n}"
+				}
+			]
+		},
+		{
+			"name": "4. Reset questionnaire",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/admin/resetq/:questionnaireID",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"admin",
+						"resetq",
+						":questionnaireID"
+					],
+					"variable": [
+						{
+							"key": "questionnaireID",
+							"value": "2",
+							"description": "String"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Successful reset of questionnaire",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9103/intelliq_api/admin/resetq/:questionnaireID",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9103",
+							"path": [
+								"intelliq_api",
+								"admin",
+								"resetq",
+								":questionnaireID"
+							],
+							"variable": [
+								{
+									"key": "questionnaireID",
+									"value": "2",
+									"description": "String"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "21"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.2 Python/3.9.7"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 18 Feb 2023 12:17:18 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"OK\"\n}"
+				}
+			]
+		},
+		{
+			"name": "a. Get questionnaire",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/questionnaire/:questionnaireID",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"questionnaire",
+						":questionnaireID"
+					],
+					"variable": [
+						{
+							"key": "questionnaireID",
+							"value": "3",
+							"description": "String"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Unsuccessful call (after resetall call)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9103/intelliq_api/questionnaire/:questionnaireID",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9103",
+							"path": [
+								"intelliq_api",
+								"questionnaire",
+								":questionnaireID"
+							],
+							"variable": [
+								{
+									"key": "questionnaireID",
+									"value": "1",
+									"description": "String"
+								}
+							]
+						}
+					},
+					"status": "PAYMENT REQUIRED",
+					"code": 402,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "67"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.2 Python/3.9.7"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 17 Feb 2023 15:39:23 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": 402,\n    \"message\": \"The call returned with no data\"\n}"
+				},
+				{
+					"name": "Successul call",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/questionnaire/:questionnaireID",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"questionnaire",
+								":questionnaireID"
+							],
+							"variable": [
+								{
+									"key": "questionnaireID",
+									"value": "3",
+									"description": "String"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1629"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.2 Python/3.9.7"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 18 Feb 2023 12:17:09 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"questionnaireID\": \"3\",\n    \"questionnaireTitle\": \"Dummy questionnaire for testing\",\n    \"keywords\": [\n        \"dummy\",\n        \"testing\"\n    ],\n    \"questions\": [\n        {\n            \"qID\": \"Dummy1\",\n            \"qtext\": \"How old are you?\",\n            \"required\": \"true\",\n            \"type\": \"profile\"\n        },\n        {\n            \"qID\": \"Dummy10\",\n            \"qtext\": \"Do you prefer summer or winter time?\",\n            \"required\": \"false\",\n            \"type\": \"question\"\n        },\n        {\n            \"qID\": \"Dummy2\",\n            \"qtext\": \"What is your favourite colour?\",\n            \"required\": \"true\",\n            \"type\": \"question\"\n        },\n        {\n            \"qID\": \"Dummy3\",\n            \"qtext\": \"Do you like soccer?\",\n            \"required\": \"true\",\n            \"type\": \"question\"\n        },\n        {\n            \"qID\": \"Dummy4\",\n            \"qtext\": \"Which football club do you support?\",\n            \"required\": \"false\",\n            \"type\": \"question\"\n        },\n        {\n            \"qID\": \"Dummy5\",\n            \"qtext\": \"Have you ever lived in an island?\",\n            \"required\": \"true\",\n            \"type\": \"question\"\n        },\n        {\n            \"qID\": \"Dummy6\",\n            \"qtext\": \"Are you a winter swimmer?\",\n            \"required\": \"true\",\n            \"type\": \"question\"\n        },\n        {\n            \"qID\": \"Dummy7\",\n            \"qtext\": \"How would you describe your relationship with water skiing\",\n            \"required\": \"false\",\n            \"type\": \"question\"\n        },\n        {\n            \"qID\": \"Dummy8\",\n            \"qtext\": \"Do you go winter skiing?\",\n            \"required\": \"true\",\n            \"type\": \"question\"\n        },\n        {\n            \"qID\": \"Dummy9\",\n            \"qtext\": \"Do you agree with the changing of standard clock time according to seasons(winter/summer)?\",\n            \"required\": \"true\",\n            \"type\": \"question\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "b. Get question",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/question/:questionnaireID/:questionID",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"question",
+						":questionnaireID",
+						":questionID"
+					],
+					"variable": [
+						{
+							"key": "questionnaireID",
+							"value": "3",
+							"description": "String"
+						},
+						{
+							"key": "questionID",
+							"value": "Dummy1",
+							"description": "String"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Successful get question call",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9103/intelliq_api/question/:questionnaireID/:questionID",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9103",
+							"path": [
+								"intelliq_api",
+								"question",
+								":questionnaireID",
+								":questionID"
+							],
+							"variable": [
+								{
+									"key": "questionnaireID",
+									"value": "3",
+									"description": "String"
+								},
+								{
+									"key": "questionID",
+									"value": "Dummy1",
+									"description": "String"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "420"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.2 Python/3.9.7"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 17 Feb 2023 15:42:21 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"questionnaireID\": \"1\",\n    \"qID\": \"1\",\n    \"qtext\": \"Which mode of transportation do you prefer?\",\n    \"required\": \"true\",\n    \"type\": \"question\",\n    \"options\": [\n        {\n            \"optID\": \"1\",\n            \"opttxt\": \"airplane\",\n            \"nextqID\": \"2\"\n        },\n        {\n            \"optID\": \"2\",\n            \"opttxt\": \"car/train\",\n            \"nextqID\": \"2\"\n        },\n        {\n            \"optID\": \"3\",\n            \"opttxt\": \"boat\",\n            \"nextqID\": \"3\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "Unsuccessful call (this questionnaire doesn't have a question with this qID)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/question/:questionnaireID/:questionID",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"question",
+								":questionnaireID",
+								":questionID"
+							],
+							"variable": [
+								{
+									"key": "questionnaireID",
+									"value": "2",
+									"description": "String"
+								},
+								{
+									"key": "questionID",
+									"value": "2",
+									"description": "String"
+								}
+							]
+						}
+					},
+					"status": "PAYMENT REQUIRED",
+					"code": 402,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "67"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.2 Python/3.9.7"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 17 Feb 2023 15:48:38 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": 402,\n    \"message\": \"The call returned with no data\"\n}"
+				},
+				{
+					"name": "Unsuccessful call (a questionnaire with this questionnaireID doesn't exist)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/question/:questionnaireID/:questionID",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"question",
+								":questionnaireID",
+								":questionID"
+							],
+							"variable": [
+								{
+									"key": "questionnaireID",
+									"value": "4",
+									"description": "String"
+								},
+								{
+									"key": "questionID",
+									"value": "2",
+									"description": "String"
+								}
+							]
+						}
+					},
+					"status": "PAYMENT REQUIRED",
+					"code": 402,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "67"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.2 Python/3.9.7"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 17 Feb 2023 15:49:35 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": 402,\n    \"message\": \"The call returned with no data\"\n}"
+				}
+			]
+		},
+		{
+			"name": "c. Save answer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/doanswer/:questionnaireID/:questionID/:session/:optionID",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"doanswer",
+						":questionnaireID",
+						":questionID",
+						":session",
+						":optionID"
+					],
+					"variable": [
+						{
+							"key": "questionnaireID",
+							"value": "2",
+							"description": "String"
+						},
+						{
+							"key": "questionID",
+							"value": "2",
+							"description": "String"
+						},
+						{
+							"key": "session",
+							"value": "1f2f",
+							"description": "String"
+						},
+						{
+							"key": "optionID",
+							"value": "4",
+							"description": "String"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Answer successfully saved to db",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9103/intelliq_api/doanswer/:questionnaireID/:questionID/:session/:optionID",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9103",
+							"path": [
+								"intelliq_api",
+								"doanswer",
+								":questionnaireID",
+								":questionID",
+								":session",
+								":optionID"
+							],
+							"variable": [
+								{
+									"key": "questionnaireID",
+									"value": "1",
+									"description": "String"
+								},
+								{
+									"key": "questionID",
+									"value": "2",
+									"description": "String"
+								},
+								{
+									"key": "session",
+									"value": "1f2f",
+									"description": "String"
+								},
+								{
+									"key": "optionID",
+									"value": "4",
+									"description": "String"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "21"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.2 Python/3.9.7"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 17 Feb 2023 08:56:01 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"OK\"\n}"
+				}
+			]
+		},
+		{
+			"name": "d. Get session answers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/getsessionanswers/:questionnaireID/:session",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"getsessionanswers",
+						":questionnaireID",
+						":session"
+					],
+					"variable": [
+						{
+							"key": "questionnaireID",
+							"value": "1",
+							"description": "String"
+						},
+						{
+							"key": "session",
+							"value": "1f2f",
+							"description": "4 character string"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Successful call",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9103/intelliq_api/getsessionanswers/:questionnaireID/:session",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9103",
+							"path": [
+								"intelliq_api",
+								"getsessionanswers",
+								":questionnaireID",
+								":session"
+							],
+							"variable": [
+								{
+									"key": "questionnaireID",
+									"value": "3",
+									"description": "String"
+								},
+								{
+									"key": "session",
+									"value": "6",
+									"description": "String"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "516"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.2 Python/3.9.7"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 17 Feb 2023 15:51:40 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"questionnaireID\": \"3\",\n    \"session\": \"6\",\n    \"answers\": [\n        {\n            \"qID\": \"Dummy1\",\n            \"ans\": \"44\"\n        },\n        {\n            \"qID\": \"Dummy10\",\n            \"ans\": \"51\"\n        },\n        {\n            \"qID\": \"Dummy2\",\n            \"ans\": \"45\"\n        },\n        {\n            \"qID\": \"Dummy3\",\n            \"ans\": \"46\"\n        },\n        {\n            \"qID\": \"Dummy5\",\n            \"ans\": \"47\"\n        },\n        {\n            \"qID\": \"Dummy6\",\n            \"ans\": \"48\"\n        },\n        {\n            \"qID\": \"Dummy8\",\n            \"ans\": \"49\"\n        },\n        {\n            \"qID\": \"Dummy9\",\n            \"ans\": \"50\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "Unsuccessful call (the user in this session didn't answer this questionnaire)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/getsessionanswers/:questionnaireID/:session",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"getsessionanswers",
+								":questionnaireID",
+								":session"
+							],
+							"variable": [
+								{
+									"key": "questionnaireID",
+									"value": "1",
+									"description": "String"
+								},
+								{
+									"key": "session",
+									"value": "2",
+									"description": "String"
+								}
+							]
+						}
+					},
+					"status": "PAYMENT REQUIRED",
+					"code": 402,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "67"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.2 Python/3.9.7"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 17 Feb 2023 15:52:57 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": 402,\n    \"message\": \"The call returned with no data\"\n}"
+				},
+				{
+					"name": "Successful call after call {{BASE_URL}}/doanswer/1/2/1f2f/4",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/getsessionanswers/:questionnaireID/:session",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"getsessionanswers",
+								":questionnaireID",
+								":session"
+							],
+							"variable": [
+								{
+									"key": "questionnaireID",
+									"value": "1",
+									"description": "String"
+								},
+								{
+									"key": "session",
+									"value": "1f2f",
+									"description": "4 character string"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "125"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.2 Python/3.9.7"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 18 Feb 2023 12:21:52 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"questionnaireID\": \"1\",\n    \"session\": \"1f2f\",\n    \"answers\": [\n        {\n            \"qID\": \"2\",\n            \"ans\": \"21f2f1\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "e . Get question answers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/getquestionanswers/:questionnaireID/:questionID",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"getquestionanswers",
+						":questionnaireID",
+						":questionID"
+					],
+					"variable": [
+						{
+							"key": "questionnaireID",
+							"value": "1",
+							"description": "String"
+						},
+						{
+							"key": "questionID",
+							"value": "1",
+							"description": "String"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Successful call",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9103/intelliq_api/getquestionanswers/:questionnaireID/:questionID",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9103",
+							"path": [
+								"intelliq_api",
+								"getquestionanswers",
+								":questionnaireID",
+								":questionID"
+							],
+							"variable": [
+								{
+									"key": "questionnaireID",
+									"value": "3",
+									"description": "String"
+								},
+								{
+									"key": "questionID",
+									"value": "Dummy4",
+									"description": "String"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "185"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.2 Python/3.9.7"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 17 Feb 2023 15:56:24 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"questionnaireID\": \"3\",\n    \"questionID\": \"Dummy4\",\n    \"answers\": [\n        {\n            \"session\": \"5\",\n            \"ans\": \"27\"\n        },\n        {\n            \"session\": \"5\",\n            \"ans\": \"37\"\n        }\n    ]\n}"
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "http://localhost:9103/intelliq_api"
+		}
+	]
+}

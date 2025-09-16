@@ -1,0 +1,190 @@
+/*
+DELETE FROM question;
+DELETE FROM answer_options;
+DELETE FROM questionnaire;
+DELETE FROM filled_questionnaire;
+DELETE FROM includes;
+DELETE FROM answer;
+*/
+#############insertion############################
+#questionnaire
+insert into questionnaire (questionnaire_id,title) values ('1','Travel quiz');
+insert into questionnaire (questionnaire_id,title) values ('2','Carrier test');
+insert into questionnaire (questionnaire_id,title) values ('3','Dummy questionnaire for testing');
+
+#keywords
+#insert into keywords (keyword, questionnaire_id) values ('travel','1');
+#insert into keywords (keyword, questionnaire_id) values ('carrier','2');
+#insert into keywords (keyword, questionnaire_id) values ('dummy','3');
+#insert into keywords (keyword, questionnaire_id) values ('testing','3');
+
+#question
+insert into question (question_id,question_text,question_required, question_type) values ('1','Which mode of transportation do you prefer?','true','question');
+insert into question (question_id,question_text,question_required, question_type) values ('2','What is most important to you when you travel?','true','question');
+insert into question (question_id,question_text,question_required, question_type) values ('3','What sounds like your idea of a fun weekend activity?','true','question');
+insert into question (question_id,question_text,question_required, question_type) values ('4', 'Which of the following travel experiences sounds the most fun to you?','true','question');
+insert into question (question_id,question_text,question_required, question_type) values ('5', 'What is your favorite type of destination?','true','question');
+insert into question (question_id,question_text,question_required, question_type) values ('6', 'Where would you rather stay?','true','question');
+insert into question (question_id,question_text,question_required, question_type) values ('7', 'What is more satisfying at work?','true','question');
+insert into question (question_id,question_text,question_required, question_type) values ('8', 'In a meeting are you more apt to','true','question');
+insert into question (question_id,question_text,question_required, question_type) values ('9', 'Please choose the word that describes you most of the time','true','question');
+insert into question (question_id,question_text,question_required, question_type) values ('Dummy1','How old are you?', 'true', 'profile');
+insert into question (question_id,question_text,question_required, question_type) values ('Dummy2','What is your favourite colour?', 'true', 'question');
+insert into question (question_id,question_text,question_required, question_type) values ('Dummy3', 'Do you like soccer?', 'true', 'question');
+insert into question (question_id,question_text,question_required, question_type) values ('Dummy4', 'Which football club do you support?', 'false', 'question');
+insert into question (question_id,question_text,question_required, question_type) values ('Dummy5', 'Have you ever lived in an island?','true', 'question');
+insert into question (question_id,question_text,question_required, question_type) values ('Dummy6', 'Are you a winter swimmer?', 'true', 'question');
+insert into question (question_id,question_text,question_required, question_type) values ('Dummy7', 'How would you describe your relationship with water skiing', 'false', 'question');
+insert into question (question_id,question_text,question_required, question_type) values ('Dummy8', 'Do you go winter skiing?','true', 'question');
+insert into question (question_id,question_text,question_required, question_type) values ('Dummy9', 'Do you agree with the changing of standard clock time according to seasons(winter/summer)?', 'true', 'question');
+insert into question (question_id,question_text,question_required, question_type) values ('Dummy10', 'Do you prefer summer or winter time?','false', 'question');
+
+#answer options
+insert into answer_options (option_id,question_id,option_text,next_question_id) values ('1','1','airplane','2');
+insert into answer_options (option_id,question_id,option_text,next_question_id) values ('2','1','car/train','2');
+insert into answer_options (option_id,question_id,option_text,next_question_id) values ('3','1','boat','3');
+insert into answer_options (option_id,question_id,option_text,next_question_id) values ('4','2','relaxing','3');
+insert into answer_options (option_id,question_id,option_text,next_question_id) values ('5','2','going on an adventure','4');
+insert into answer_options (option_id,question_id,option_text,next_question_id) values ('6','3','exploring a new neighborhood in the city','3');
+insert into answer_options (option_id,question_id,option_text,next_question_id) values ('7','3','going on a hike','4');
+insert into answer_options (option_id,question_id,option_text,next_question_id) values ('8','3','road trip','4');
+insert into answer_options (option_id,question_id,option_text,next_question_id) values ('9','4','road tripping through Italy','6');
+insert into answer_options (option_id,question_id,option_text,next_question_id) values ('10','4','Spotting wildlife in Galapagos','6');
+insert into answer_options (option_id,question_id,option_text,next_question_id) values ('11','4','Going on a relaxing wellness retreat','5');
+insert into answer_options (option_id,question_id,option_text,next_question_id) values ('12','4','Visiting Paris','5');
+insert into answer_options (option_id,question_id,option_text,next_question_id) values ('13','5','cities filled with history and culture','6');
+insert into answer_options (option_id,question_id,option_text,next_question_id) values ('14','5','anywhere with outdoor activities','6');
+insert into answer_options (option_id,question_id,option_text,next_question_id) values ('15','6','Luxury resort','6');
+insert into answer_options (option_id,question_id,option_text,next_question_id) values ('16','6','In a tend under the stars','6');
+insert into answer_options (option_id,question_id,option_text,next_question_id) values ('17','6','Wilderness lodge','6');
+insert into answer_options (option_id,question_id,option_text,next_question_id) values ('18','6','Bed and Breakfast','7');
+insert into answer_options (option_id,question_id,option_text,next_question_id) values ('19','7','salary','8');
+insert into answer_options (option_id,question_id,option_text,next_question_id) values ('20','7','sense of being part of a team','9');
+insert into answer_options (option_id,question_id,option_text,next_question_id) values ('21','8','listen to others','9');
+insert into answer_options (option_id,question_id,option_text,next_question_id) values ('22','8','participate enthusiastically','8');
+insert into answer_options (option_id,question_id,option_text,next_question_id) values ('23','9','private','9');
+insert into answer_options (option_id,question_id,option_text,next_question_id) values ('24','9','extroverted','9');
+insert into answer_options (option_id,question_id,option_text,next_question_id) values ('D1opt1','Dummy1','<30','Dummy2');
+insert into answer_options (option_id,question_id,option_text,next_question_id) values ('D1opt2','Dummy1','30-50','Dummy2');
+insert into answer_options (option_id,question_id,option_text,next_question_id) values ('D1opt3','Dummy1','50-70','Dummy2');
+insert into answer_options (option_id,question_id,option_text,next_question_id) values ('D1opt4','Dummy1','>70','Dummy2');
+insert into answer_options (option_id,question_id,option_text,next_question_id) values ('D2opt1','Dummy2','yellow','Dummy3');
+insert into answer_options (option_id,question_id,option_text,next_question_id) values ('D2opt2','Dummy2','green','Dummy3');
+insert into answer_options (option_id,question_id,option_text,next_question_id) values ('D2opt3','Dummy2','blue','Dummy3');
+insert into answer_options (option_id,question_id,option_text,next_question_id) values ('D3opt1','Dummy3','yes','Dummy4');
+insert into answer_options (option_id,question_id,option_text,next_question_id) values ('D3opt2','Dummy3','no','Dummy5');
+insert into answer_options (option_id,question_id,option_text,next_question_id) values ('D4opt1','Dummy4','Liverpool','Dummy5');
+insert into answer_options (option_id,question_id,option_text,next_question_id) values ('D4opt2','Dummy4','Manchester City','Dummy5');
+insert into answer_options (option_id,question_id,option_text,next_question_id) values ('D4opt3','Dummy4','Manchester United','Dummy5');
+insert into answer_options (option_id,question_id,option_text,next_question_id) values ('D5opt1','Dummy5','yes','Dummy7');
+insert into answer_options (option_id,question_id,option_text,next_question_id) values ('D5opt2','Dummy5','no','Dummy6');
+insert into answer_options (option_id,question_id,option_text,next_question_id) values ('D6opt1','Dummy6','no','Dummy8');
+insert into answer_options (option_id,question_id,option_text,next_question_id) values ('D6opt2','Dummy6','yes','Dummy8');
+insert into answer_options (option_id,question_id,option_text,next_question_id) values ('D7opt1','Dummy7','none','Dummy6');
+insert into answer_options (option_id,question_id,option_text,next_question_id) values ('D7opt2','Dummy7','I know a little','Dummy6');
+insert into answer_options (option_id,question_id,option_text,next_question_id) values ('D7opt3','Dummy7','I am experienced','Dummy6');
+insert into answer_options (option_id,question_id,option_text,next_question_id) values ('D8opt1','Dummy8','No/I dont do ski','Dummy9');
+insert into answer_options (option_id,question_id,option_text,next_question_id) values ('D8opt2','Dummy8','Rarely','Dummy9');
+insert into answer_options (option_id,question_id,option_text,next_question_id) values ('D8opt3','Dummy8','I ski every weekend','Dummy9');
+insert into answer_options (option_id,question_id,option_text,next_question_id) values ('D9opt1','Dummy9','no','Dummy9');
+insert into answer_options (option_id,question_id,option_text,next_question_id) values ('D9opt2','Dummy9','yes','Dummy10');
+insert into answer_options (option_id,question_id,option_text,next_question_id) values ('D10opt1','Dummy10','Winter','Dummy10');
+insert into answer_options (option_id,question_id,option_text,next_question_id) values ('D10opt2','Dummy10','Summer','Dummy10');
+
+#includes
+insert into includes (question_id, questionnaire_id) values ('1','1');
+insert into includes (question_id, questionnaire_id) values ('2','1');
+insert into includes (question_id, questionnaire_id) values ('3','1');
+insert into includes (question_id, questionnaire_id) values ('4','1');
+insert into includes (question_id, questionnaire_id) values ('5','1');
+insert into includes (question_id, questionnaire_id) values ('6','1');
+insert into includes (question_id, questionnaire_id) values ('7','2');
+insert into includes (question_id, questionnaire_id) values ('8','2');
+insert into includes (question_id, questionnaire_id) values ('9','2');
+insert into includes (question_id, questionnaire_id) values ('Dummy1','3');
+insert into includes (question_id, questionnaire_id) values ('Dummy2','3');
+insert into includes (question_id, questionnaire_id) values ('Dummy3','3');
+insert into includes (question_id, questionnaire_id) values ('Dummy4','3');
+insert into includes (question_id, questionnaire_id) values ('Dummy5','3');
+insert into includes (question_id, questionnaire_id) values ('Dummy6','3');
+insert into includes (question_id, questionnaire_id) values ('Dummy7','3');
+insert into includes (question_id, questionnaire_id) values ('Dummy8','3');
+insert into includes (question_id, questionnaire_id) values ('Dummy9','3');
+insert into includes (question_id, questionnaire_id) values ('Dummy10','3');
+#filled questionnaire
+insert into filled_questionnaire (filled_questionnaire_id,questionnaire_id) values ('1','1');
+insert into filled_questionnaire (filled_questionnaire_id,questionnaire_id)  values ('2','2');
+insert into filled_questionnaire (filled_questionnaire_id,questionnaire_id) values ('3','1');
+#dummy for testing
+insert into filled_questionnaire (filled_questionnaire_id,questionnaire_id) values ('4','3');
+insert into filled_questionnaire (filled_questionnaire_id,questionnaire_id) values ('5','3');
+insert into filled_questionnaire (filled_questionnaire_id,questionnaire_id) values ('6','3');
+insert into filled_questionnaire (filled_questionnaire_id,questionnaire_id) values ('7','3');
+insert into filled_questionnaire (filled_questionnaire_id,questionnaire_id) values ('8','3');
+
+#answer
+insert into answer (answer_id, option_id, question_id, questionnaire_id, filled_questionnaire_id,answer_text) values ('1','3','1','1','1','boat');
+insert into answer (answer_id, option_id, question_id, questionnaire_id, filled_questionnaire_id,answer_text) values ('2','1','1','1','3','airplane');
+insert into answer (answer_id, option_id, question_id, questionnaire_id, filled_questionnaire_id,answer_text) values ('3','4','2','1','1','relaxing');
+insert into answer (answer_id, option_id, question_id, questionnaire_id, filled_questionnaire_id,answer_text) values ('4','4','2','1','3','relaxing');
+insert into answer (answer_id, option_id, question_id, questionnaire_id, filled_questionnaire_id,answer_text) values ('5','6','3','1','1','exploring a new neighborhood in the city');
+insert into answer (answer_id, option_id, question_id, questionnaire_id, filled_questionnaire_id,answer_text) values ('6','8','3','1','3','road trip');
+insert into answer (answer_id, option_id, question_id, questionnaire_id, filled_questionnaire_id,answer_text) values ('7','9','4','1','1','road tripping through Italy');
+insert into answer (answer_id, option_id, question_id, questionnaire_id, filled_questionnaire_id,answer_text) values ('8','12','4','1','3','Visiting Paris');
+insert into answer (answer_id, option_id, question_id, questionnaire_id, filled_questionnaire_id,answer_text) values ('9','13','5','1','1','cities filled with history and culture');
+insert into answer (answer_id, option_id, question_id, questionnaire_id, filled_questionnaire_id,answer_text) values ('10','14','5','1','3','anywhere with outdoor activities');
+insert into answer (answer_id, option_id, question_id, questionnaire_id, filled_questionnaire_id,answer_text) values ('11','15','6','1','1','Luxury resort');
+insert into answer (answer_id, option_id, question_id, questionnaire_id, filled_questionnaire_id,answer_text) values ('12','15','6','1','3','Luxury resort');
+insert into answer (answer_id, option_id, question_id, questionnaire_id, filled_questionnaire_id,answer_text) values ('13','19','7','2','2','salary');
+insert into answer (answer_id, option_id, question_id, questionnaire_id, filled_questionnaire_id,answer_text) values ('14','22','8','2','2','participate enthusiastically');
+insert into answer (answer_id, option_id, question_id, questionnaire_id, filled_questionnaire_id,answer_text) values ('15','24','9','2','2','extroverted');
+#dummy for testing
+insert into answer (answer_id, option_id, question_id, questionnaire_id, filled_questionnaire_id,answer_text) values ('16','D1opt1','Dummy1','3','4','<30');
+insert into answer (answer_id, option_id, question_id, questionnaire_id, filled_questionnaire_id,answer_text) values ('17','D2opt3','Dummy2','3','4','blue');
+insert into answer (answer_id, option_id, question_id, questionnaire_id, filled_questionnaire_id,answer_text) values ('18','D3opt2','Dummy3','3','4','no');
+insert into answer (answer_id, option_id, question_id, questionnaire_id, filled_questionnaire_id,answer_text) values ('19','D5opt2','Dummy5','3','4','no');
+insert into answer (answer_id, option_id, question_id, questionnaire_id, filled_questionnaire_id,answer_text) values ('20','D6opt1','Dummy6','3','4','no');
+insert into answer (answer_id, option_id, question_id, questionnaire_id, filled_questionnaire_id,answer_text) values ('21','D8opt2','Dummy8','3','4','Rarely');
+insert into answer (answer_id, option_id, question_id, questionnaire_id, filled_questionnaire_id,answer_text) values ('22','D9opt2','Dummy9','3','4','yes');
+insert into answer (answer_id, option_id, question_id, questionnaire_id, filled_questionnaire_id,answer_text) values ('23','D10opt1','Dummy10','3','4','Winter');
+##########################
+insert into answer (answer_id, option_id, question_id, questionnaire_id, filled_questionnaire_id,answer_text) values ('24','D1opt1','Dummy1','3','5','<30');
+insert into answer (answer_id, option_id, question_id, questionnaire_id, filled_questionnaire_id,answer_text) values ('25','D2opt1','Dummy2','3','5','yellow');
+insert into answer (answer_id, option_id, question_id, questionnaire_id, filled_questionnaire_id,answer_text) values ('26','D3opt1','Dummy3','3','5','yes');
+insert into answer (answer_id, option_id, question_id, questionnaire_id, filled_questionnaire_id,answer_text) values ('27','D4opt2','Dummy4','3','5','Manchester City');
+insert into answer (answer_id, option_id, question_id, questionnaire_id, filled_questionnaire_id,answer_text) values ('28','D5opt1','Dummy5','3','5','yes');
+insert into answer (answer_id, option_id, question_id, questionnaire_id, filled_questionnaire_id,answer_text) values ('29','D7opt1','Dummy7','3','5','none');
+insert into answer (answer_id, option_id, question_id, questionnaire_id, filled_questionnaire_id,answer_text) values ('30','D6opt2','Dummy6','3','5','yes');
+insert into answer (answer_id, option_id, question_id, questionnaire_id, filled_questionnaire_id,answer_text) values ('31','D8opt3','Dummy8','3','5','I ski every weekend');
+insert into answer (answer_id, option_id, question_id, questionnaire_id, filled_questionnaire_id,answer_text) values ('32','D9opt2','Dummy9','3','5','yes');
+insert into answer (answer_id, option_id, question_id, questionnaire_id, filled_questionnaire_id,answer_text) values ('33','D10opt1','Dummy10','3','5','Winter');
+#########################
+insert into answer (answer_id, option_id, question_id, questionnaire_id, filled_questionnaire_id,answer_text) values ('34','D1opt2','Dummy1','3','5','30-50');
+insert into answer (answer_id, option_id, question_id, questionnaire_id, filled_questionnaire_id,answer_text) values ('35','D2opt1','Dummy2','3','5','yellow');
+insert into answer (answer_id, option_id, question_id, questionnaire_id, filled_questionnaire_id,answer_text) values ('36','D3opt1','Dummy3','3','5','yes');
+insert into answer (answer_id, option_id, question_id, questionnaire_id, filled_questionnaire_id,answer_text) values ('37','D4opt1','Dummy4','3','5','Liverpool');
+insert into answer (answer_id, option_id, question_id, questionnaire_id, filled_questionnaire_id,answer_text) values ('38','D5opt1','Dummy5','3','5','yes');
+insert into answer (answer_id, option_id, question_id, questionnaire_id, filled_questionnaire_id,answer_text) values ('39','D7opt1','Dummy7','3','5','none');
+insert into answer (answer_id, option_id, question_id, questionnaire_id, filled_questionnaire_id,answer_text) values ('40','D6opt2','Dummy6','3','5','yes');
+insert into answer (answer_id, option_id, question_id, questionnaire_id, filled_questionnaire_id,answer_text) values ('41','D8opt1','Dummy8','3','5','No/I dont do ski');
+insert into answer (answer_id, option_id, question_id, questionnaire_id, filled_questionnaire_id,answer_text) values ('42','D9opt2','Dummy9','3','5','yes');
+insert into answer (answer_id, option_id, question_id, questionnaire_id, filled_questionnaire_id,answer_text) values ('43','D10opt2','Dummy10','3','5','Summer');
+##########################
+insert into answer (answer_id, option_id, question_id, questionnaire_id, filled_questionnaire_id,answer_text) values ('44','D1opt1','Dummy1','3','6','<30');
+insert into answer (answer_id, option_id, question_id, questionnaire_id, filled_questionnaire_id,answer_text) values ('45','D2opt1','Dummy2','3','6','yellow');
+insert into answer (answer_id, option_id, question_id, questionnaire_id, filled_questionnaire_id,answer_text) values ('46','D3opt2','Dummy3','3','6','no');
+insert into answer (answer_id, option_id, question_id, questionnaire_id, filled_questionnaire_id,answer_text) values ('47','D5opt2','Dummy5','3','6','no');
+insert into answer (answer_id, option_id, question_id, questionnaire_id, filled_questionnaire_id,answer_text) values ('48','D6opt1','Dummy6','3','6','no');
+insert into answer (answer_id, option_id, question_id, questionnaire_id, filled_questionnaire_id,answer_text) values ('49','D8opt2','Dummy8','3','6','Rarely');
+insert into answer (answer_id, option_id, question_id, questionnaire_id, filled_questionnaire_id,answer_text) values ('50','D9opt2','Dummy9','3','6','yes');
+insert into answer (answer_id, option_id, question_id, questionnaire_id, filled_questionnaire_id,answer_text) values ('51','D10opt2','Dummy10','3','6','Summer');
+########################
+insert into answer (answer_id, option_id, question_id, questionnaire_id, filled_questionnaire_id,answer_text) values ('52','D1opt3','Dummy1','3','7','50-70');
+insert into answer (answer_id, option_id, question_id, questionnaire_id, filled_questionnaire_id,answer_text) values ('53','D2opt2','Dummy2','3','7','green');
+insert into answer (answer_id, option_id, question_id, questionnaire_id, filled_questionnaire_id,answer_text) values ('54','D3opt2','Dummy3','3','7','no');
+insert into answer (answer_id, option_id, question_id, questionnaire_id, filled_questionnaire_id,answer_text) values ('55','D5opt2','Dummy5','3','7','no');
+insert into answer (answer_id, option_id, question_id, questionnaire_id, filled_questionnaire_id,answer_text) values ('56','D6opt1','Dummy6','3','7','no');
+insert into answer (answer_id, option_id, question_id, questionnaire_id, filled_questionnaire_id,answer_text) values ('57','D8opt2','Dummy8','3','7','Rarely');
+insert into answer (answer_id, option_id, question_id, questionnaire_id, filled_questionnaire_id,answer_text) values ('58','D9opt2','Dummy9','3','7','yes');
+insert into answer (answer_id, option_id, question_id, questionnaire_id, filled_questionnaire_id,answer_text) values ('59','D10opt1','Dummy10','3','7','Winter');
+
