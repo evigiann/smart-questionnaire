@@ -1,6 +1,4 @@
-# Software Engineering Project 2022-2023
-
-**Name of the app**: Intelliq
+# Intelliq - A dynamic questionnaire app
 
 **Description**: A web-based application for conducting surveys/answering questionnaires that supports presenting the user 
 with different questions based on their answers
