@@ -13,10 +13,10 @@ insert into questionnaire (questionnaire_id,title) values ('2','Carrier test');
 insert into questionnaire (questionnaire_id,title) values ('3','Dummy questionnaire for testing');
 
 #keywords
-#insert into keywords (keyword, questionnaire_id) values ('travel','1');
-#insert into keywords (keyword, questionnaire_id) values ('carrier','2');
-#insert into keywords (keyword, questionnaire_id) values ('dummy','3');
-#insert into keywords (keyword, questionnaire_id) values ('testing','3');
+insert into keywords (keyword, questionnaire_id) values ('travel','1');
+insert into keywords (keyword, questionnaire_id) values ('carrier','2');
+insert into keywords (keyword, questionnaire_id) values ('dummy','3');
+insert into keywords (keyword, questionnaire_id) values ('testing','3');
 
 #question
 insert into question (question_id,question_text,question_required, question_type) values ('1','Which mode of transportation do you prefer?','true','question');

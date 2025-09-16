@@ -19,10 +19,19 @@ export default function AdminPageSession(){
      useEffect(() => {
 
          const giveData = async () => {
-             if(sessions!==0){
-            let response = await apiCalls.getSessionAnswers(SelectedSession.questionnaireID,SelectedSession.session);
-            let data = response.data;
-            setAnswers(data.answers);
+             if(sessions!==0 && SelectedSession){
+                try{
+                    let response = await apiCalls.getSessionAnswers(SelectedSession.questionnaireID,SelectedSession.session);
+                    let data = response.data;
+                    setAnswers(data.answers);
+                } catch (error) {
+                    if (error.response && error.response.status === 402) {
+                        setAnswers([])
+                        console.log("No answers for this session" );
+                    } else {
+                        console.error("An error occurred:", error);
+                    }
+                }
             }
         }
         giveData();

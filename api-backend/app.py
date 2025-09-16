@@ -16,6 +16,10 @@ app.config['JSON_SORT_KEYS'] = False
 mysql = MySQL(app)
 
 
+# cors enabling 
+from flask_cors import CORS
+CORS(app)
+
 # base url
 PREFIX = "/intelliq_api"
 
@@ -151,7 +155,7 @@ def return_questionnaire_object(questionnaireID):
     cur.execute("""SELECT DISTINCT keyword, questionnaire_id FROM keywords 
     WHERE questionnaire_id='{}';""".format(questionnaireID))
     kw = cur.fetchall()
-    if not rv or not kw:
+    if not rv:
         raise NoData
     else:
         details = []

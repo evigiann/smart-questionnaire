@@ -81,8 +81,16 @@ elif args.scope == 'resetall':
 # questionnaire_udp
 elif args.scope == 'questionnaire_upd':
     filename = args.source
-    filedata = open(str(filename)[25:-28], 'r') # opens it
-    content = json.load(filedata) # loads it into a dictionary
+    
+    # Handle both file objects and string paths
+    if hasattr(filename, 'read'):
+        # It's already a file object (from argparse with type=open)
+        content = json.load(filename)
+    else:
+        # It's a string path, open the file
+        with open(filename, 'r') as filedata:
+            content = json.load(filedata)
+    
     json_object = json.dumps(content, indent=4) # makes it a json again
     response = requests.post('http://localhost:9103/intelliq_api/admin/questionnaire_upd', json=json_object)
 # resetq

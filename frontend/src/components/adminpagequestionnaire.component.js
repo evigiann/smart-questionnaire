@@ -19,15 +19,27 @@ export default function AdminPageQuestionnaire() {
         }
         giveData();
     }, []);
+
+
     useEffect( () => {
         const giveData =async() => {
             if (quests!==0) {
                 setQuestions(0);
                 setSelectedQuestion(0);
                 setAnswers(0);
+                try{
                 let response = await apiCalls.getQuestionnaire(SelectedQuest.questionnaireID);
                 let data = response.data;
                 setQuestions(data.questions);
+                }
+                catch (error) {
+                    if (error.response && error.response.status === 402) {
+                        setQuestions([])
+                        console.log("No questions for this questionnaire" );
+                    } else {
+                        console.error("An error occurred:", error);
+                    }
+                }
             }
         }
         giveData();
@@ -36,13 +48,21 @@ export default function AdminPageQuestionnaire() {
     useEffect( () => {
         const giveData =async() => {
             setError(false);
+            setAnswers(0);
             if (quests!==0 && SelectedQuestion!==0) {
-                setAnswers(0);
                 try{
                 let response = await apiCalls.getQuestionAnswers(SelectedQuest.questionnaireID, SelectedQuestion.qID);
                 let data = response.data;
                 setAnswers(data.answers);
-                } catch (error) {setError(true);}
+                } catch (error) {
+                    if (error.response && error.response.status === 402) {
+                        setError(true);
+                        setAnswers([])
+                    } else {
+                        setError(true);
+                        console.error("An error occurred:", error);
+                    }
+                }
             }
         }
         giveData();
