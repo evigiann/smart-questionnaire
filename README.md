@@ -5,24 +5,6 @@
 **Description**: A web-based application for conducting surveys/answering questionnaires that supports presenting the user 
 with different questions based on their answers
 
-**Group Members**:
-
-el19016 - Evangelia Giannakopoulou
-
-el19217 - Olga Barlou 
-
-el19153 - Sofia - Maria Efstratiadou 
-
-el19806 - Maria - Eleni Zoumpoulidi
- 
- 
-| Name                       | Database      |Backend |Frontent|API|CLI|Testing|Docs-Diagrams|
-| -------------------------- | ------------- |--------|--------|---|---|-------|-------------|
-| Evangelia Giannakopoulou   |               |    X   |        | X | X |   X   |      X      |
-| Olga Barlou                |               |        |    X   |   |   |   X   |      X      |
-| Sofia-Maria Efstratiadou   |       X       |        |        |   | X |   X   |      X      |
-|Maria-Eleni Zoumpoulidi     |       X       |        |        | X | X |   X   |      X      |
- 
  The **software/frameworks/languages** used for this app are the following :
  
   1. UML/Visual Paradigm for the initial Documentation
