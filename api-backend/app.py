@@ -1,19 +1,28 @@
 # Using flask to make an api
 import json
-
+import os
 # import necessary libraries and functions
 from flask import Flask, jsonify, request
 from flask_mysqldb import MySQL
+from dotenv import load_dotenv
+
+# Load environment variables from .env file if it exists
+if os.path.exists('.env'):
+    load_dotenv()
+
 
 # creating a Flask app
 app = Flask(__name__, template_folder='../frontend')
-app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'password'
-app.config['MYSQL_DB'] = 'intelliq'
+app.config['MYSQL_HOST'] = os.environ.get('DB_HOST')
+app.config['MYSQL_USER'] = os.environ.get('DB_USER')
+app.config['MYSQL_PASSWORD'] = os.environ.get('DB_PASSWORD')
+app.config['MYSQL_DB'] = os.environ.get('DB_NAME')
+app.config['MYSQL_PORT'] = int(os.environ.get('DB_PORT', 3306))
 app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 app.config['JSON_SORT_KEYS'] = False
 mysql = MySQL(app)
+
+
 
 
 # cors enabling 
@@ -351,4 +360,9 @@ def get_sessions():
 
 # driver function
 if __name__ == '__main__':
-    app.run(debug=True, port=9103, host='localhost')
+    # Get the port from environment variable or use default 9103
+    port = int(os.environ.get('PORT', 9103))
+    # Use 0.0.0.0 to allow external connections on Render
+    host = '0.0.0.0' if os.environ.get('RENDER') else 'localhost'
+    app.run(debug=os.environ.get('FLASK_DEBUG', 'False').lower() == 'true', 
+            port=port, host=host)
