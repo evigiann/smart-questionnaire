@@ -1,7 +1,5 @@
 import axios from 'axios';
-
-import config from './config';
-const API_BASE_URL = config[process.env.NODE_ENV || 'development'].API_BASE_URL;
+import { API_BASE_URL } from './config';
 
 class apiCalls {
     getAvailableQuestionnairesIDs(){
