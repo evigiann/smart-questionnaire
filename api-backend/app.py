@@ -4,6 +4,7 @@ import os
 # import necessary libraries and functions
 from flask import Flask, jsonify, request
 from flask_mysqldb import MySQL
+from flask_cors import CORS
 from dotenv import load_dotenv
 
 # Load environment variables from .env file if it exists
