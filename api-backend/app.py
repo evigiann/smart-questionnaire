@@ -25,29 +25,14 @@ mysql = MySQL(app)
 
 from flask_cors import CORS
 
-# Allow specific origins instead of all
-CORS(app, resources={
-    r"/intelliq_api/*": {
-        "origins": [
-            "http://localhost:3000",  # Local development
-            "https://your-vercel-app.vercel.app",  # Your Vercel URL
-            "https://*.vercel.app"  # All Vercel deployments
-        ],
-        "methods": ["GET", "POST", "OPTIONS"],
-        "allow_headers": ["Content-Type", "Authorization"]
-    }
-})
 
-# Handle preflight requests for CORS
-@app.before_request
-def handle_preflight():
-    if request.method == "OPTIONS":
-        response = jsonify({"status": "ok"})
-        response.headers.add("Access-Control-Allow-Origin", 
-                           "https://smart-questionnaire.vercel.app/, http://localhost:3000")
-        response.headers.add("Access-Control-Allow-Headers", "Content-Type,Authorization")
-        response.headers.add("Access-Control-Allow-Methods", "GET,POST,OPTIONS")
-        return response
+# CORS Configuration - SIMPLIFIED VERSION (Recommended)
+CORS(app, origins=[
+    "http://localhost:3000",
+    "https://smart-questionnaire.vercel.app",
+    "https://*.vercel.app"
+])
+
 
 # base url
 PREFIX = "/intelliq_api"
